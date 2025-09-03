@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 09:11:22 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/03 18:51:57 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/03 23:18:15 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/03 23:40:02 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-int main()
+# include "Weapon.hpp"
+# include <string>
+
+class HumanA
 {
-	int N = 5;
-	Zombie* h = zombieHorde(N, "Hordy");
-	if (h)
-	{
-		for (int i = 0; i < N; ++i)
-			h[i].announce();
-		delete [] h;
-	}
-	return 0;
-}
+    private:
+        std::string name_;
+        Weapon& weapon_;
+    public:
+        HumanA(const std::string& name, Weapon& weapon);
+        void attack();
+};
+
+#endif

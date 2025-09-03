@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabou-ha <mabou-ha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:33:47 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/03 14:10:07 by mabou-ha         ###   ########.fr       */
+/*   Updated: 2025/09/03 18:47:49 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ class Zombie
 	private:
 		std::string name_;
 	public:
+		Zombie();
 		Zombie(std::string name);
 		~Zombie();
 		void announce();
 		void setName(const std::string& name);
 
 };
+
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

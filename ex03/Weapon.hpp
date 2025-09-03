@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 09:11:22 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/03 18:51:57 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/03 19:22:49 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/03 23:26:21 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main()
+# include <string>
+
+class Weapon
 {
-	int N = 5;
-	Zombie* h = zombieHorde(N, "Hordy");
-	if (h)
-	{
-		for (int i = 0; i < N; ++i)
-			h[i].announce();
-		delete [] h;
-	}
-	return 0;
-}
+    private:
+        std::string type_;
+    public:
+        Weapon(const std::string& type);
+        ~Weapon();
+        std::string getType() const;
+        void setType(const std::string& type);
+};
+
+#endif

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 09:11:22 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/03 18:51:57 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/03 19:32:18 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/03 23:26:26 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon(const std::string& type) : type_(type) {}
+
+Weapon::~Weapon() {}
+
+std::string Weapon::getType() const
 {
-	int N = 5;
-	Zombie* h = zombieHorde(N, "Hordy");
-	if (h)
-	{
-		for (int i = 0; i < N; ++i)
-			h[i].announce();
-		delete [] h;
-	}
-	return 0;
+    return type_;
+}
+
+void Weapon::setType(const std::string& type)
+{
+    type_ = type;
 }

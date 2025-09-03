@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 09:11:22 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/03 18:51:57 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/03 18:53:06 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/03 18:56:42 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include <string>
 
 int main()
 {
-	int N = 5;
-	Zombie* h = zombieHorde(N, "Hordy");
-	if (h)
-	{
-		for (int i = 0; i < N; ++i)
-			h[i].announce();
-		delete [] h;
-	}
-	return 0;
+    std::string str = "HI THIS IS BRAIN";
+    std::string* stringPTR = &str;
+    std::string& stringREF = str;
+
+    std::cout << "Address of str:         " << &str       << std::endl;
+    std::cout << "Address in stringPTR:   " << stringPTR  << std::endl;
+    std::cout << "Address from stringREF: " << &stringREF << std::endl;
+    std::cout << "Value of str:           " << str        << std::endl;
+    std::cout << "Value via stringPTR:    " << *stringPTR << std::endl;
+    std::cout << "Value via stringREF:    " << stringREF  << std::endl;
 }
