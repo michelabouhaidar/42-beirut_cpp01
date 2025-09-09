@@ -5,30 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 17:44:50 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/09 17:58:16 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/09 22:56:01 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/09 23:00:01 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
+#include <iostream>
 
-int main()
+int main(int argc, char** argv)
 {
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+    Harl h;
+    if (argc == 2)
+        h.complain(argv[1]);
+    else {
+        h.complain("DEBUG");
+        h.complain("INFO");
+        h.complain("WARNING");
+        h.complain("ERROR");
+        h.complain("whatever");
     }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-		 jim.attack(); 
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-    }
+    return 0;
 }

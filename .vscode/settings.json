@@ -45,6 +45,8 @@
 		"streambuf": "cpp",
 		"cstdarg": "cpp",
 		"cwctype": "cpp",
-		"deque": "cpp"
+		"deque": "cpp",
+		"sstream": "cpp",
+		"fstream": "cpp"
 	}
 }

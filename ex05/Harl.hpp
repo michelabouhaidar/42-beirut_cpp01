@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 17:41:53 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/09 17:53:40 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/09 21:45:57 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/09 22:59:16 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
-
-# include "Weapon.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 # include <string>
 
-class HumanB
+class Harl
 {
 	private:
-		std::string name_;
-		Weapon* weapon_;
+		void debug() const;
+		void info() const;
+		void warning() const;
+		void error() const;
 	public:
-		HumanB(const std::string& name);
-		void setWeapon(Weapon& weapon);
-		const std::string getName() const;
-		void attack() const;
+		Harl();
+		~Harl();
+		void complain(std::string level) const;
 };
+
+int getLevel(std::string level);
+typedef void (Harl::*function_p)(void) const;
 
 #endif
