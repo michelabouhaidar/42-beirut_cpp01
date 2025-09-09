@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabou-ha <mabou-ha>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 22:56:01 by mabou-ha          #+#    #+#             */
-/*   Updated: 2025/09/09 23:21:32 by mabou-ha         ###   ########.fr       */
+/*   Created: 2025/09/09 21:45:57 by mabou-ha          #+#    #+#             */
+/*   Updated: 2025/09/09 22:59:16 by mabou-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
-#include <iostream>
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <string>
 
-int main()
+class Harl
 {
-	Harl h;
-	h.complain("DEBUG");
-	h.complain("INFO");
-	h.complain("WARNING");
-	h.complain("ERROR");
-	h.complain("whatever");
-	return 0;
-}
+	private:
+		void debug() const;
+		void info() const;
+		void warning() const;
+		void error() const;
+	public:
+		Harl();
+		~Harl();
+		void complain(std::string level) const;
+};
+
+int getLevel(std::string level);
+typedef void (Harl::*function_p)(void) const;
+
+#endif
